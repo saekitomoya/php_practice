@@ -66,7 +66,7 @@ for($i = $start; $i <= $end; $i++){
      if($i % 5 == 0)
     echo $i;
     echo"\n";
-}
+    }
 
  
  //laravel04
@@ -88,11 +88,58 @@ function add($a, $b){
 echo add(1,2);
 echo "\n";
 
+$result = 1;
 $arr = array(1,3,5,7,9);
 print_r($arr);
 function myFuncC($arr){
+    global $result;
     foreach($arr as $value){
-    $arr*= $value;
+    $result *= $value;
     }
-    echo("配列の計算結果:".$value);
-}myFuncC($arr);
+    echo($result);
+}
+    myFuncC($arr);
+    echo "\n";
+    
+    $result = 1;
+    $arr = array(1,3,5,7,9,);
+    print_r($arr);
+    function max_array($arr){
+        global $result;
+        foreach($arr as $a){
+            $result *= $a;
+        }
+        echo($result);
+}
+    max_array($arr);
+    echo "\n";
+    
+//strip_tags
+$str = <<<EOM
+<h1>関数</h1>
+<p>でｰす</p>
+EOM;
+var_dump(strip_tags($str,"<p>"));
+
+//array_push
+$members = array(1,2,3);
+array_push($members,"hello");
+print_r($members);
+echo "\n";
+
+//array_merge
+$array1 = [1, 2, 3];
+$array2 = [10, 20, 30];
+$array3 = [100, 200, 300];
+$array = array_merge($array1,$array2,$array3);
+print_r($array);
+echo "\n";
+
+//time, mktime
+$yesterday = mktime(0,0,0,12,14,2021);
+print date ("Y年m月d日".$yesterday); 
+echo "\n";
+
+
+
+
